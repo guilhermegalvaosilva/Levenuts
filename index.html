@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Levenuts — chocolates artesanais com ingredientes selecionados."
+    />
+    <title>LEVENUTS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand" aria-label="Página inicial Levenuts">
+        <img
+          src="img/032dba229d3c6c574579f03161850357.jpg"
+          alt="Logotipo Levenuts"
+          class="logo"
+        />
+        <h1 class="brand-name">LEVENUTS</h1>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#quem-somos">Quem Somos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="cart-button"
+        aria-expanded="false"
+        aria-label="Abrir carrinho"
+      >
+        Carrinho <span class="cart-count" aria-hidden="true">0</span>
+      </button>
+    </header>
+
+    <main id="main" role="main">
+      <section class="hero" aria-label="Apresentação">
+        <div class="hero-content">
+          <h2 class="title">“Onde cada pedaço conta uma história”</h2>
+          <p class="sub__title">
+            Produzimos chocolates artesanais com ingredientes selecionados e
+            sabor inconfundível.
+          </p>
+        </div>
+      </section>
+
+      <!-- Produtos -->
+      <section id="produtos" class="products-section" aria-label="Produtos">
+        <header class="section-header">
+          <h3>Produtos em destaque</h3>
+          <p class="section-lead">
+            Escolha seus chocolates favoritos — embalagem e entrega disponíveis.
+          </p>
+        </header>
+
+        <div class="product-grid" role="list">
+          <article
+            class="product-card"
+            role="listitem"
+            aria-labelledby="p1-name"
+            data-id="p1"
+            data-name="Caixa Sortida 12un"
+            data-price="49.90"
+            data-img="img/032dba229d3c6c574579f03161850357.jpg"
+          >
+            <img
+              src="img/032dba229d3c6c574579f03161850357.jpg"
+              alt="Caixa de bombons sortidos"
+              class="product-img"
+            />
+            <div class="product-body">
+              <h4 id="p1-name" class="product-name">Caixa Sortida 12un</h4>
+              <p class="product-desc">
+                Bombons recheados com ingredientes selecionados.
+              </p>
+              <div class="product-meta">
+                <span class="price">R$ 49,90</span>
+                <button
+                  class="btn buy-btn"
+                  aria-label="Adicionar Caixa Sortida 12un ao carrinho"
+                >
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="product-card"
+            role="listitem"
+            aria-labelledby="p2-name"
+            data-id="p2"
+            data-name="Trufas Gourmet 8un"
+            data-price="34.90"
+            data-img="img/032dba229d3c6c574579f03161850357.jpg"
+          >
+            <img
+              src="img/032dba229d3c6c574579f03161850357.jpg"
+              alt="Trufas gourmet"
+              class="product-img"
+            />
+            <div class="product-body">
+              <h4 id="p2-name" class="product-name">Trufas Gourmet 8un</h4>
+              <p class="product-desc">Trufas artesanais com cacau premium.</p>
+              <div class="product-meta">
+                <span class="price">R$ 34,90</span>
+                <button
+                  class="btn buy-btn"
+                  aria-label="Adicionar Trufas Gourmet 8un ao carrinho"
+                >
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="product-card"
+            role="listitem"
+            aria-labelledby="p3-name"
+            data-id="p3"
+            data-name="Barra de Chocolate 70% 100g"
+            data-price="19.90"
+            data-img="img/032dba229d3c6c574579f03161850357.jpg"
+          >
+            <img
+              src="img/032dba229d3c6c574579f03161850357.jpg"
+              alt="Barras artesanais"
+              class="product-img"
+            />
+            <div class="product-body">
+              <h4 id="p3-name" class="product-name">
+                Barra de Chocolate 70% 100g
+              </h4>
+              <p class="product-desc">Cacau intenso, sem adição de açúcar.</p>
+              <div class="product-meta">
+                <span class="price">R$ 19,90</span>
+                <button
+                  class="btn buy-btn"
+                  aria-label="Adicionar Barra de Chocolate 70% 100g ao carrinho"
+                >
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="product-card"
+            role="listitem"
+            aria-labelledby="p4-name"
+            data-id="p4"
+            data-name="Kit Presente"
+            data-price="79.90"
+            data-img="img/032dba229d3c6c574579f03161850357.jpg"
+          >
+            <img
+              src="img/032dba229d3c6c574579f03161850357.jpg"
+              alt="Kit presente"
+              class="product-img"
+            />
+            <div class="product-body">
+              <h4 id="p4-name" class="product-name">Kit Presente</h4>
+              <p class="product-desc">
+                Seleção premium em embalagem para presente.
+              </p>
+              <div class="product-meta">
+                <span class="price">R$ 79,90</span>
+                <button
+                  class="btn buy-btn"
+                  aria-label="Adicionar Kit Presente ao carrinho"
+                >
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      
+
+    <!-- Cart sidebar / overlay -->
+    <div class="cart-overlay" hidden></div>
+    <aside
+      class="cart-sidebar"
+      aria-hidden="true"
+      aria-label="Carrinho de compras"
+    >
+      <header class="cart-header">
+        <h3>Carrinho</h3>
+        <button class="cart-close" aria-label="Fechar carrinho">&times;</button>
+      </header>
+      <div class="cart-items" role="list"></div>
+      <footer class="cart-footer">
+        <div class="cart-total">
+          Total: R$ <span class="cart-total-value">0,00</span>
+        </div>
+        <button class="btn checkout-btn">Finalizar Compra</button>
+      </footer>
+    </aside>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>
