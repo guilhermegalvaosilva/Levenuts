@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* minimal inline styles to keep page usable mesmo sem css principal */
+    body{font-family:Inter,Arial,Helvetica,sans-serif;background:#faf9f8;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    .card{background:#fff;border:1px solid #eee;padding:20px;border-radius:10px;max-width:420px;width:100%;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+    label{display:block;margin:10px 0 6px}
+    input{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px}
+    .row{display:flex;gap:8px;margin-top:14px}
+    .btn{flex:1;padding:10px;border-radius:8px;border:0;background:#b85a24;color:#fff;font-weight:700;cursor:pointer}
+    .secondary{background:#f3f3f3;color:#222;border:1px solid #eee}
+    .muted{color:#666;font-size:0.92rem;margin-top:8px}
+    .error{color:#b00020;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-labelledby="tit">
+    <h2 id="tit">Área Administrativa</h2>
+    <p class="muted" id="modeInfo">Verificando...</p>
+
+    <form id="admin-form" autocomplete="off">
+      <div id="setupFields" style="display:none;">
+        <label for="newPass">Criar senha (mín 6)</label>
+        <input id="newPass" type="password" minlength="6" />
+        <label for="newPass2">Confirmar senha</label>
+        <input id="newPass2" type="password" minlength="6" />
+      </div>
+
+      <div id="loginFields" style="display:none;">
+        <label for="pass">Senha</label>
+        <input id="pass" type="password" />
+      </div>
+
+      <div class="row">
+        <button type="submit" class="btn" id="submitBtn">Entrar</button>
+        <button type="button" id="backBtn" class="btn secondary">Voltar</button>
+      </div>
+      <div class="error" id="err" role="alert" aria-live="assertive"></div>
+    </form>
+  </div>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>

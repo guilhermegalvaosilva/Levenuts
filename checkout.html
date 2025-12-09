@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Checkout — Levenuts</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* pequenos ajustes locais ao checkout */
+      .card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        margin-bottom: 18px;
+      }
+      .inline {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .qr {
+        max-width: 220px;
+        border-radius: 8px;
+        border: 1px solid #f0e0d7;
+        padding: 8px;
+        background: #fff;
+        margin-top: 8px;
+      }
+      .loading {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container" style="max-width: 920px; margin: 28px auto">
+      <h1 class="center">Finalizar Compra</h1>
+
+      <section class="card" aria-labelledby="orderTitle">
+        <h2 id="orderTitle">Resumo do pedido</h2>
+        <div id="cartSummary" class="small" style="margin-top: 12px">
+          Carregando carrinho...
+        </div>
+      </section>
+
+      <form id="checkoutForm" class="card" autocomplete="off" novalidate>
+        <h2>Dados de entrega</h2>
+
+        <label
+          >Nome completo
+          <input id="buyerName" name="name" type="text" required />
+        </label>
+
+        <label
+          >Email
+          <input id="buyerEmail" name="email" type="email" required />
+        </label>
+
+        <label
+          >Telefone
+          <input id="buyerPhone" name="phone" type="tel" />
+        </label>
+
+        <label
+          >Endereço (rua, número, cidade, CEP)
+          <input id="buyerAddress" name="address" type="text" />
+        </label>
+
+        <h3 style="margin-top: 14px">Pagamento</h3>
+        <div
+          style="
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 12px;
+          "
+        >
+          <label
+            ><input type="radio" name="payment" value="pix" checked />
+            Pix</label
+          >
+          <label
+            ><input type="radio" name="payment" value="card" /> Cartão
+            (simulado)</label
+          >
+        </div>
+
+        <div id="pixBox" style="margin-bottom: 12px">
+          <div class="small">
+            Chave Pix (teste): <strong id="pixKey">467.924.698-74</strong>
+          </div>
+          <div class="small muted" style="margin-top: 8px">
+            Use o QR ou a chave para pagar. Depois clique em "Marcar como pago"
+            (simulação).
+          </div>
+          <div
+            id="pixQrArea"
+            style="
+              margin-top: 8px;
+              display: flex;
+              gap: 12px;
+              align-items: center;
+            "
+          >
+            <img id="pixQr" class="qr" alt="QR Pix" src="" />
+            <div class="small muted" id="pixCopyArea"></div>
+          </div>
+        </div>
+
+        <div id="cardBox" style="display: none; margin-bottom: 12px">
+          <label
+            >Número do cartão
+            <input
+              id="cardNumber"
+              type="text"
+              inputmode="numeric"
+              placeholder="4242 4242 4242 4242"
+            />
+          </label>
+          <div style="display: flex; gap: 8px">
+            <label
+              >MM/AA <input id="cardExp" type="text" placeholder="12/28"
+            /></label>
+            <label
+              >CVC
+              <input
+                id="cardCvc"
+                type="text"
+                inputmode="numeric"
+                placeholder="123"
+            /></label>
+          </div>
+        </div>
+
+        <div
+          id="checkoutActions"
+          style="
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 12px;
+          "
+        >
+          <button type="submit" id="payBtn" class="btn">Pagar agora</button>
+          <button
+            type="button"
+            id="simulatePaid"
+            class="btn secondary"
+            title="Usar apenas para Pix"
+          >
+            Marcar como pago (teste)
+          </button>
+          <div style="margin-left: auto; font-weight: 800">
+            Total: <span id="orderTotal">R$ 0,00</span>
+          </div>
+        </div>
+
+        <div
+          id="msg"
+          role="status"
+          aria-live="polite"
+          style="margin-top: 12px; color: #b00020"
+        ></div>
+      </form>
+
+      <section
+        id="thankYou"
+        class="card"
+        style="display: none; padding: 16px; margin-top: 18px"
+      >
+        <h2>Pedido recebido</h2>
+        <p id="thankMsg" class="small"></p>
+        <div style="margin-top: 12px">
+          <a href="index.html" class="btn">Voltar à loja</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="checkout.js" defer></script>
+  </body>
+</html>

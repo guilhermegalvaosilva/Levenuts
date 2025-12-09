@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Administração — Levenuts</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body{font-family:Inter,Arial,Helvetica,sans-serif;background:#faf9f8;margin:0;padding:24px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1200px;margin:0 auto}
+    .card{background:#fff;border:1px solid #eee;border-radius:10px;padding:16px;box-shadow:0 8px 20px rgba(0,0,0,0.06);margin-top:18px}
+    .btn{background:#b85a24;color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px solid #f3f1ef;text-align:left}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h1>Administração</h1>
+    <div>
+      <button id="logoutBtn" class="btn">Sair</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="card" aria-labelledby="ordersTitle">
+      <h2 id="ordersTitle">Pedidos (local)</h2>
+      <div id="ordersList" class="small">Carregando pedidos...</div>
+    </section>
+
+    <section class="card" aria-labelledby="toolsTitle">
+      <h2 id="toolsTitle">Ferramentas</h2>
+      <p class="small">Redefinir senha (apaga hash salvo):</p>
+      <button id="resetHash" class="btn" style="background:#444">Remover senha</button>
+    </section>
+  </main>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>
